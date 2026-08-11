@@ -278,11 +278,10 @@ public class Main {
             d.	Trong lớp cơ sở NhanVien, định nghĩa một phương thức virtual tên là TinhLuongThucLinh() (CalculateActualSalary) trả về double. Phương thức này mặc định trả về LuongCoBan. Trong lớp NhanVienChinhThuc, ghi đè (override) phương thức TinhLuongThucLinh() để tính toán tổng lương thực lĩnh bao gồm LuongCoBan cộng với Thuong.
             e.	Viết một Class CongTy (Company) chứa một List (hoặc Collection tương đương) các đối tượng thuộc kiểu NhanVien. Cài đặt một phương thức TinhTongLuongPhaiTra() (CalculateTotalSalary) trong lớp CongTy để duyệt qua toàn bộ danh sách nhân viên và sử dụng tính năng Đa hình (Polymorphism) để tính và trả về tổng lương thực lĩnh (sử dụng phương thức TinhLuongThucLinh()) cho tất cả nhân viên trong công ty.
             f.	Trong hệ thống, cần áp dụng mức thuế khác nhau cho từng loại nhân viên (ví dụ: Nhân viên chính thức có thuế 10%, nhân viên thời vụ có thuế 5%). Yêu cầu sinh viên không được thay đổi cấu trúc của lớp NhanVien hiện tại. Sử dụng Abstract Class (hoặc Interface nâng cao) và áp dụng một mẫu thiết kế (ví dụ: Strategy Pattern đơn giản) để tính toán Tiền Thuế của một nhân viên, sau đó điều chỉnh phương thức TinhTongLuongPhaiTra() trong lớp CongTy.
-            i.	Định nghĩa một Abstract Class (hoặc Interface) có tên ThueStrategy (TaxStrategy) với một phương thức trừu tượng TinhTienThue(double luong)
-            ii.	Tạo hai lớp dẫn xuất cụ thể (ví dụ: ThueNVCThuc và ThueNVThoiVu) để thực thi logic tính thuế riêng (10% và 5%).
-            iii.	Cập nhật lớp NhanVien để chứa một thuộc tính (property) ThueApDung kiểu ThueStrategy
-            iv.	Cập nhật phương thức TinhTongLuongPhaiTra() trong lớp CongTy để nó truyền lương thực lĩnh của mỗi nhân viên vào ThueApDung của nhân viên đó để tính thuế, sau đó trừ đi tiền thuế đó để tính tổng lương ròng thực tế công ty phải chi trả.
-
+                i.	Định nghĩa một Abstract Class (hoặc Interface) có tên ThueStrategy (TaxStrategy) với một phương thức trừu tượng TinhTienThue(double luong)
+                ii.	Tạo hai lớp dẫn xuất cụ thể (ví dụ: ThueNVCThuc và ThueNVThoiVu) để thực thi logic tính thuế riêng (10% và 5%).
+                iii.	Cập nhật lớp NhanVien để chứa một thuộc tính (property) ThueApDung kiểu ThueStrategy
+                iv.	Cập nhật phương thức TinhTongLuongPhaiTra() trong lớp CongTy để nó truyền lương thực lĩnh của mỗi nhân viên vào ThueApDung của nhân viên đó để tính thuế, sau đó trừ đi tiền thuế đó để tính tổng lương ròng thực tế công ty phải chi trả.
         */
     }
 }
